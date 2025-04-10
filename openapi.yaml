@@ -2,7 +2,7 @@ openapi: 3.0.0
 
 info:
   title: Пример API для работы с пользователями
-  description: API для создания, получения, обновления и удаления пользователей.
+  description: API для создания, получения, обновления и удаления пользователей
   version: 1.0.0
 
 security:
@@ -81,8 +81,9 @@ paths:
           $ref: '#/components/responses/ServerError'
 
     put:
-      summary: ""
+      summary: "Обновить данные пользователя по ID"
       operationId: usersIdPUT
+      description: Метод позволяет обновить данные пользователя по ID
       tags:
         - users
       parameters:
@@ -112,8 +113,9 @@ paths:
           $ref: '#/components/responses/ServerError'
 
     patch:
-      summary: ""
+      summary: "Частично обновить данные пользователя по ID"
       operationId: usersIdPATCH
+      description: Метод позволяет частично обновить данные пользователя по ID
       tags:
         - users
       parameters:
@@ -168,6 +170,7 @@ components:
   schemas:
     User:
       type: object
+      description: Схема пользователя, которая включает все данные, связанные с учетной записью пользователя в системе
       required:
         - id
         - username
@@ -222,6 +225,7 @@ components:
 
     CreateUser:
       type: object
+      description: Схема для создания нового пользователя
       required:
         - username
         - email
@@ -271,6 +275,7 @@ components:
 
     PartialUserUpdate:
       type: object
+      description: Схема для частичного обновления данных пользователя
       properties:
         username:
           type: string
